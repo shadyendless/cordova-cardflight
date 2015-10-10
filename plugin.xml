@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.univercity3d.cardflight"
+        version="0.0.1">
+
+  <name>Cardflight iOS</name>
+  <description>The Cardflight iOS SDK for Cordova.</description>
+  <keywords>cardflight, ios</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=3.6.0" />
+  </engines>
+
+  <js-module src="www/cardflight-plugin.js" name="Cardflight">
+    <clobbers target="Cardflight" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Cardflight">
+        <param name="ios-package" value="Cardflight" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CardflightPlugin.h" />
+    <source-file src="src/ios/CardflightPlugin.m" />
+
+    <header-file src="src/ios/Cardflight/CardFlight.h" />
+    <header-file src="src/ios/Cardflight/CFTAPIResource.h" />
+    <header-file src="src/ios/Cardflight/CFTBaseReader.h" />
+    <header-file src="src/ios/Cardflight/CFTCard.h" />
+    <header-file src="src/ios/Cardflight/CFTCharge.h" />
+    <header-file src="src/ios/Cardflight/CFTCustomEntryTextField.h" />
+    <header-file src="src/ios/Cardflight/CFTCustomView.h" />
+    <header-file src="src/ios/Cardflight/CFTEnum.h" />
+    <header-file src="src/ios/Cardflight/CFTPaymentView.h" />
+    <header-file src="src/ios/Cardflight/CFTReader.h" />
+    <header-file src="src/ios/Cardflight/CFTSessionManager.h" />
+
+    <source-file src="src/ios/Cardflight/libCardFlightLibrary.a" framework="true" />
+
+    <framework src="AVFoundation.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="MessageUI.framework" />
+    <framework src="CoreGraphics.framework" />
+
+    <framework src="libstdc++.6.0.9.dylib" />
+    <framework src="libCardFlightLibrary.a" />
+  </platform>
+
+</plugin>
